@@ -7,5 +7,8 @@ services:
     ports: 
       - "3888:80"
     volumes:
-      - .:/usr/share/nginx/html
+      - ./index.html:/usr/share/nginx/html/index.html
+      - ./assets:/usr/share/nginx/html/assets
+      - ~/ssl:/etc/ssl # Mount the SSL directory from the host directory direction to the container direction.
+    restart: unless-stopped
       
